@@ -1,0 +1,1 @@
+This project is to make a header file in C for the implementation of Graphs. The graph is in the form of an adjacency list
