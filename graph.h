@@ -2,6 +2,7 @@
 #define GRAPH_H
 
 #include <stddef.h>  // for NULL
+#include <stdbool.h>
 
 typedef struct Edge {
     int to;             
@@ -28,7 +29,7 @@ void addEdge(Graph* g, int from, int to, int weight);
 void removeEdge(Graph* g, int from, int to);
 
 // Check if an edge exists
-int hasEdge(const Graph* g, int from, int to);
+bool hasEdge(const Graph* g, int from, int to);
 
 // Print the graph
 void printGraph(const Graph* g);

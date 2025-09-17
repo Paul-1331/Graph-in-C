@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "graph.h"
 
 /* Create a graph with n vertices */
@@ -87,15 +88,15 @@ void removeEdge(Graph* g, int from, int to) {
 }
 
 /* Check if edge exists */
-int hasEdge(const Graph* g, int from, int to) {
-    if (!g || from >= g->numVertices || to >= g->numVertices) return 0;
+bool hasEdge(const Graph* g, int from, int to) {
+    if (!g || from >= g->numVertices || to >= g->numVertices) return false;
 
     Edge* curr = g->adjList[from];
     while (curr) {
-        if (curr->to == to) return 1;
+        if (curr->to == to) return true;
         curr = curr->next;
     }
-    return 0;
+    return false;
 }
 
 /* Print graph */
